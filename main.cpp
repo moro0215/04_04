@@ -5,13 +5,26 @@
 
 int main() {
 
-	Circle circle;
-	circle.Size();//ñ êœ
-	circle.Draw();//ï\é¶
+	IShape* ishape[2];
 
-	Rectangle rectangle;
-	rectangle.Size();//ñ êœ
-	rectangle.Draw();//ï\é¶
+	for (int i = 0; i < 2; i++) {
+		if(i==0){
+			ishape[i] = new Circle();
+		}
+		if (i == 1) {
+			ishape[i] = new Rectangle();
+		}
+	}
+
+	//ñ êœ
+	for (int i = 0; i < 2; i++) {
+		ishape[i]->Size();
+	}
+	//ï\é¶
+	for (int i = 0; i < 2; i++) {
+		ishape[i]->Draw();
+	}
+
 
 	return 0;
 }
